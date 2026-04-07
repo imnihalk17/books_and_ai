@@ -82,7 +82,9 @@ Output:
 
 Run from inside amazon/:
 
-- python fetch_amazon_reviews.py --skip-login
+- python fetch_amazon_reviews.py
+
+This script requires an Amazon login. Enter your own Amazon email and password in the script before running.
 
 ### 3) Fetch Amazon ratings
 
@@ -98,7 +100,9 @@ Output:
 
 Run from inside amazon/:
 
-- python fetch_amazon_ratings.py --skip-login
+- python fetch_amazon_ratings.py
+
+This script requires an Amazon login. Enter your own Amazon email and password in the script before running.
 
 ## goodreads/
 

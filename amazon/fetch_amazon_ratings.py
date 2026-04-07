@@ -18,8 +18,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 
 INPUT_FILE = "amazon_urls.json"
 OUTPUT_FILE = "amazon_ratings.json"
-AMAZON_EMAIL = "tc2896@columbia.edu"
-AMAZON_PASSWORD = "romeitalyA123@"
+AMAZON_EMAIL = "PUT_YOUR_AMAZON_EMAIL_HERE"
+AMAZON_PASSWORD = "PUT_YOUR_AMAZON_PASSWORD_HERE"
 MAX_RETRIES = 3
 RETRY_BASE_DELAY = 2.0
 
