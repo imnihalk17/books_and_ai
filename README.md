@@ -137,7 +137,7 @@ Output:
 
 Run from inside goodreads/:
 
-- python fetch_goodreads_ratings.py
+- python fetch_goodreads_ratings.py --delay 2
 
 ### 3) Fetch Goodreads reviews
 
@@ -153,7 +153,7 @@ Output:
 
 Run from inside goodreads/:
 
-- python fetch_goodreads_reviews.py
+- python fetch_goodreads_reviews.py --input goodreads_urls.json --output goodreads_reviews.json --retries 3 --pause 2
 
 ## Notes
 
