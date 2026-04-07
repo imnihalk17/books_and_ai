@@ -1,20 +1,16 @@
 ﻿# books_and_ai
 
-Amazon scraping scripts.
-
-## Folder layout
+Two local scraping folders:
 
 - amazon/
-	- find_amazon_urls.py
-	- fetch_amazon_reviews.py
-	- fetch_amazon_ratings.py
+- goodreads/
 
 ## Requirements
 
 - Python 3.10+
 - Google Chrome installed
 - Git
-- A valid Amazon account for the login-based scripts
+- Selenium-based scripts use ChromeDriver via webdriver-manager
 
 Recommended Python packages:
 
@@ -35,6 +31,8 @@ Replace any hardcoded test credentials before running the scripts.
 
 ## Simple file names used by the scripts
 
+### amazon/
+
 - metadata.json
 - amazon_urls.json
 - amazon_validation.json
@@ -42,7 +40,17 @@ Replace any hardcoded test credentials before running the scripts.
 - amazon_reviews.json
 - amazon_ratings.json
 
-## 1) Find Amazon URLs
+### goodreads/
+
+- metadata.json
+- goodreads_urls.json
+- goodreads_not_found.json
+- goodreads_ratings.json
+- goodreads_reviews.json
+
+## amazon/
+
+### 1) Find Amazon URLs
 
 Script: amazon/find_amazon_urls.py
 
@@ -56,11 +64,11 @@ Outputs:
 - amazon_mismatches.json
 - amazon_validation.json
 
-Run:
+Run from inside amazon/:
 
 - python find_amazon_urls.py
 
-## 2) Fetch Amazon reviews
+### 2) Fetch Amazon reviews
 
 Script: amazon/fetch_amazon_reviews.py
 
@@ -72,11 +80,11 @@ Output:
 
 - amazon_reviews.json
 
-Run:
+Run from inside amazon/:
 
 - python fetch_amazon_reviews.py --skip-login
 
-## 3) Fetch Amazon ratings
+### 3) Fetch Amazon ratings
 
 Script: amazon/fetch_amazon_ratings.py
 
@@ -88,12 +96,63 @@ Output:
 
 - amazon_ratings.json
 
-Run:
+Run from inside amazon/:
 
 - python fetch_amazon_ratings.py --skip-login
+
+## goodreads/
+
+### 1) Find Goodreads URLs
+
+Script: goodreads/find_goodreads_urls.py
+
+Input:
+
+- metadata.json
+
+Outputs:
+
+- goodreads_urls.json
+- goodreads_not_found.json
+
+Run from inside goodreads/:
+
+- python find_goodreads_urls.py
+
+### 2) Fetch Goodreads ratings and review counts
+
+Script: goodreads/fetch_goodreads_ratings.py
+
+Input:
+
+- goodreads_urls.json
+
+Output:
+
+- goodreads_ratings.json
+
+Run from inside goodreads/:
+
+- python fetch_goodreads_ratings.py
+
+### 3) Fetch Goodreads reviews
+
+Script: goodreads/fetch_goodreads_reviews.py
+
+Input:
+
+- goodreads_urls.json
+
+Output:
+
+- goodreads_reviews.json
+
+Run from inside goodreads/:
+
+- python fetch_goodreads_reviews.py
 
 ## Notes
 
 - The scripts resume from existing output files when possible.
-- Keep all input/output files inside the amazon folder for simplicity.
+- Keep each script’s inputs and outputs inside its own folder for simplicity.
 
