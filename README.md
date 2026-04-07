@@ -102,7 +102,7 @@ Run from inside amazon/:
 
 - python fetch_amazon_ratings.py
 
-This script requires an Amazon login. Enter your own Amazon email and password in the script before running.
+This script can also be run with `--skip-login` if you want to skip the login flow.
 
 ## goodreads/
 
